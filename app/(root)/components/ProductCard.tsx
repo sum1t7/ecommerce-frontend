@@ -6,9 +6,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { use, useEffect, useState } from "react";
+import HeartFavorite from "./HeartFav";
 
 
-const ProductCard = ({ product }: { product: ProductType }) => {
+interface ProductCardProps {
+  product: ProductType;
+  updateSignedInUser?: (updatedUser: UserType) => void;
+}
+
+const ProductCard = ({ product, updateSignedInUser }: ProductCardProps ) => {
+  
 const {user} = useUser();
 const [loading, setLoading] = useState(false);
 const [signedInUser, setSignedInUser] = useState<UserType | null>(null);
@@ -78,10 +85,8 @@ if(user){
       <div className="flex justify-between items-center pr-5 ">
         <p className=" text-black ">Rs {formatPrice(product.price)}</p>
         
-               <button onClick={handleLike}>
-          <HeartIcon fill={`${isLiked ? "black":"white"}`}  />
-        </button>
-      </div>
+                <HeartFavorite product={product} updateSignedInUser={updateSignedInUser} />
+       </div>
     </Link>
   );
 };
