@@ -24,3 +24,4 @@ const OrderSuccess = () => {
 }
 
 export default OrderSuccess
+export const dynamic = "force-dynamic";

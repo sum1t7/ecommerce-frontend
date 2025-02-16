@@ -23,3 +23,4 @@ const ProductList = async () => {
 };
 
 export default ProductList;
+export const dynamic = "force-dynamic";

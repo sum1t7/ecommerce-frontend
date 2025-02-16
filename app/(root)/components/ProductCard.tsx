@@ -92,3 +92,4 @@ if(user){
 };
 
 export default ProductCard;
+export const dynamic = "force-dynamic";

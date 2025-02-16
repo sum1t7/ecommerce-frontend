@@ -145,3 +145,4 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 };
 
 export default ProductInfo;
+export const dynamic = "force-dynamic";
